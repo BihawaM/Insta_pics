@@ -8,17 +8,18 @@ from .models import *
 from .forms import *
 
 # Create your views here.
-def login(request):
+def login_user(request):
     return render(request, 'registration/login.html',)
 
 def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            user = form.save()
+            # username = form.cleaned_data.get('username')
+            # raw_password = form.cleaned_data.get('password1')
+            # form.username = username
+            # print(user)
             login(request, user)
             return redirect('home')
     else:

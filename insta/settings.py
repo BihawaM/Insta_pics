@@ -70,7 +70,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 INSTALLED_APPS = [
     'crispy_forms',
     'cloudinary',
-    'bootstrap3',
+    'bootstrap4',
     'pics.apps.PicsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

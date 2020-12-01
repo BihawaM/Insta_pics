@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% block content %}
 <div class="row userbody">
     <div id="userdetails" class="row col-12 mb-2">
@@ -12,13 +12,15 @@
                 <button id="follow" class="editbtn {% if not isfollowing %}d-none{% endif %} btn-primary" onclick="togglefollow({{user_object.id}})">
                     <span class="edittext">Follow</span>
                 </button>
-                <button id="follown" class="btn {% if isfollowing %}d-none{% endif %} followbtn" onclick="togglefollow({{user_object.id}})">
-                    <span class="edittext">Following</span>
-                </button>
+                <!-- <button id="follown" class="btn {% if isfollowing %}d-none{% endif %} followbtn" onclick="togglefollow({{user_object.id}})"> -->
+                    <button id="follow-button">+ Follow</button>	
+                <!-- </button> -->
             </div>
             <div style="margin-bottom: 11px;">
                 <span class="info"><strong>{{ user_object.profile.posts.count }}</strong> posts</span>
+                <br>
                 <span class="info"><strong id="followers">{{ user_object.profile.followers.count }}</strong> followers</span>
+                <br>
                 <span class="info"><strong id="following">{{ user_object.profile.following.count }}</strong> following</span>
             </div>
             <div>
